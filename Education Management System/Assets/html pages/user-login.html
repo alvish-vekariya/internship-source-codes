@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/3e7f8f034d.js" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #D8EBF2;">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center d-flex justify-content-between">
+                <h1 class="mt-4" style="color: #023859;">User Login</h1>
+                <div class="align-items-center d-flex mt-3">
+                    <button class="btn border text-white" style="background-color: #023859;" onclick="location.href = '../../index.html';">
+                        <i class="fa-solid fa-house me-2"></i>Home
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col d-flex justify-content-center rounded-5">
+                <div class="card p-5 rounded-5" style="width: 45rem; border: 1px solid #023859;">
+                    <div class="car-body">
+                        <div class="form-floating">
+                            <input type="email" name="" id="username" class="form-control" placeholder="Email Address">
+                            <label for="Username">Email Address</label>
+                        </div>
+                        <div class="form-floating mt-3 mb-2">
+                            <input type="password" name="" id="password" class="form-control" placeholder="Password">
+                            <label for="password">Password</label>
+                        </div>
+                        <span>
+                            <input type="checkbox" name="" id="checkPswd" class="form-check-input" onclick="showPassword()">
+                            <label for="checkPswd">Show Password</label>
+                        </span>
+                        <div class="d-none text-danger" id="warning"><p class="fs-5">*Invalid Credentials</p></div>
+                        <button class="btn w-100 mt-3 text-white" onclick="checkStudent()" style="background-color: #023859;">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/user-login.js"></script>
+</body>
+</html>

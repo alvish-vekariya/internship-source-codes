@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/3e7f8f034d.js" crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #D8EBF2;">
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col d-flex justify-content-between">
+                <h1 id="heading"></h1>
+                <div class="d-flex align-items-center">
+                    <button class="btn border text-white" id="home" onclick="gohome()" style="background-color: #023859;">
+                        <i class="fa-solid fa-house me-2"></i>Home
+                    </button>
+                    <button class="btn border text-white" id="signout" onclick="gosignin()" style="background-color: #023859;">
+                        <i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body rounded" style="border: 1px solid #023859;">
+                        <form id="myForm">
+                            <div class="row px-5 d-flex justify-content-center">
+                                <div class="row p-lg-3 d-flex justify-content-center">
+                                    <div class="col-lg-4 mb-4">
+                                        <label for="firstname" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstname" disabled>
+                                        <p class="text-danger" id="firstnamep"></p>
+                                    </div>
+                                    <div class="col-lg-4 mb-4">
+                                        <label for="lastname" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastname" disabled>
+                                    </div>
+                                    <div class="col-lg-4 mb-4">
+                                        <label for="dob" class="form-label">Date Of Birth</label>
+                                        <input type="date" class="form-control" id="dob" disabled>
+                                        <p class="text-danger" id="dobp"></p>
+                                    </div>
+                                    <div class="col-lg-4 mb-4">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="text" class="form-control" id="email" disabled>
+                                        <p class="text-danger" id="emailp"></p>
+                                    </div>
+                                    <div class="col-lg-4 mb-4">
+                                        <label for="address" class="form-label">Address</label>
+                                        <!-- <input type="text" class="form-control" id="address"> -->
+                                        <textarea name="" cols="30" rows="1"class="form-control" id="address" disabled></textarea>
+                                        <p class="text-danger" id="addressp"></p>
+                                    </div>
+                                    <div class="col-lg-4 mb-4">
+                                        <label for="graduationyear" class="form-label">Graduation Year</label>
+                                        <input type="month" class="form-control" id="graduationyear" disabled>
+                                        <p class="text-danger" id="graduationyearp"></p>
+                                    </div>
+                                    <div class="col-lg-4 mb-4 ms-0">
+                                        <label for="pswd" class="form-label">Password</label>
+                                        <input type="password" name="" id="pswd" class="form-control" disabled>
+                                        <p class="text-danger" id="passwordp"></p>
+                                        <input type="checkbox" name="" id="checkit" class="form-check-input me-2" onclick="showPassword()"><label for="checkit" class="form-check-label">Show Password</label>
+                                    </div>
+                                </div>
+                                <hr>
+                            </div>
+
+                        <div class="row px-5 text-center">
+                            <div class="col-lg-12 d-flex justify-content-between px-5 mb-5">
+                                <span>
+                                    <h2>Education:</h2>
+                                </span>
+                                <button class="btn addbtn rounded-circle bg-dark text-white" type="button" onclick="addEduRow(event)" disabled>+</button>
+                            </div>
+                            <div class="col-lg-12 showData px-lg-5 text-center table-responsive">
+                                <table class="table mb-4">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Degree/Board</th>
+                                            <th scope="col">School/College</th>
+                                            <th scope="col">Start Date</th>
+                                            <th scope="col">Passout Year</th>
+                                            <th scope="col">Percentage</th>
+                                            <th scope="col">Backlog</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="eduTable">
+                                        <tr>
+                                            <td> <input type="text" class="form-control" id="degree" value="10th" disabled><p class="text-danger" id="degreeP"></p></td>
+                                            <td> <input type="text" class="form-control" id="school" disabled><p class="text-danger" id="schoolP"></p></td>
+                                            <td> <input type="month" class="form-control" id="startdate" disabled><p class="text-danger" id="startP"></p></td>
+                                            <td> <input type="month" class="form-control" id="passout" disabled><p class="text-danger" id="passoutP"></p></td>
+                                            <td> <input type="number" class="form-control" id="percentage" min="0" max="100" step=".01" disabled><p class="text-danger" id="percentageP"></p></td>
+                                            <td> <input type="number" class="form-control" id="backlog" min="0" value="0" required disabled><p class="text-danger" id="backlogP"></p></td>
+                                            <td><button class="btn btn-dsbld" disabled type="button"></button></td>
+                                        </tr>
+                                        <tr>
+                                            <td> <input type="text" class="form-control" id="degree" value="10th" disabled><p class="text-danger" id="degreeP"></p></td>
+                                            <td> <input type="text" class="form-control" id="school" disabled><p class="text-danger" id="schoolP"></p></td>
+                                            <td> <input type="month" class="form-control" id="startdate" disabled><p class="text-danger" id="startP"></p></td>
+                                            <td> <input type="month" class="form-control" id="passout" disabled><p class="text-danger" id="passoutP"></p></td>
+                                            <td> <input type="number" class="form-control" id="percentage" min="0" max="100" step=".01" disabled><p class="text-danger" id="percentageP"></p></td>
+                                            <td> <input type="number" class="form-control" id="backlog" min="0" value="0" required disabled><p class="text-danger" id="backlogP"></p></td>
+                                            <td><button class="btn btn-dsbld" disabled type="button"></button></td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col mt-2 mb-4">
+                                <div>
+                                    <input type="checkbox" id="wantUpdate" onclick="disableForm()" class="form-check-input">
+                                    <label for="wantUpdate"> Do You Want To Update Your Details ?</label>
+                                </div>
+                                <button type="button" class="btn sub-btn btn-success mt-3" disabled  onclick="updateData(event)">Update</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/student-script.js"></script>
+</body>
+</html>

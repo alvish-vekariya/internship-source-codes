@@ -1,0 +1,135 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    /* background-image: url('../background.jpg');
+    background-repeat: no-repeat; */
+    background-color: #D8EBF2;
+}
+
+.heading{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    color: #023859;
+}
+
+.addbtn{
+    border-radius: 50% !important;
+    background-color: rgb(3, 3, 37);
+    color: white;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addbtn:hover{
+    color: white;
+}
+
+.btn-remove{
+    height: 2rem;
+    width: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+}
+
+.btn-dsbld{
+    width: 2rem;
+    height: 2rem;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+}
+
+.btn-remove span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-15%);
+}
+
+p{
+    color: red;
+}
+
+#eduTable p{
+    color: red;
+}
+
+.showTable{
+    /* background: rgb(255, 255, 255, .5); */
+    background-color: #023859;
+    color: white;
+}
+
+#showTable tr td, #showTable tr th{
+    text-align: center !important;
+}
+
+.eduShowInfo{
+    background-color: #d8ebf2;
+}
+
+#eduDiv{
+    padding: 1rem;
+    /* background-color: rgba(177, 212, 228, 0.521) !important; */
+    background-color: #d8ebf2d3;
+}
+
+.info{
+    border: 1px solid white !important;
+    color: #96C6D9;
+}
+
+.info:hover{
+    background-color: #96C6D9;
+    color: #023859 !important;
+}
+
+.info:focus{
+    box-shadow: none !important;
+}
+
+.add-button{
+    background-color: #023859 !important;
+    color: white;
+}
+
+.add-button:hover{
+    scale: 1.1;
+    color: white;
+    transition: all;
+}
+
+.add-button:focus{
+    box-shadow: 0px 0px 10px 1px #023859 !important;
+}
+
+
+.modal-content{
+    background-color: #D8EBF2;
+    color: #023859;
+    font-size: large;
+    font-weight: 500;
+}
+
+.sub-button{
+    background-color: #023859 !important;
+    color: white;
+}
+
+.dt-search{
+    color: #023859 !important;
+}
+
+.dt-input{
+    border: 1px solid #023859 !important;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form With API</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Custom styles/style.css">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../scripts/jquery.js"></script>
+    <script src="https://kit.fontawesome.com/3e7f8f034d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.0/css/dataTables.dataTables.min.css">
+    <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
+    <script src="../scripts/admin-script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 heading justify-content-between">
+                <span>
+                    <h1>ADMIN SIDE</h1>
+                </span>
+                <div>
+                    <button class="btn border text-white" id="home"
+                        style="background-color: #023859;">
+                        <i class="fa-solid fa-house me-2"></i>Home
+                    </button>
+                    <button class="btn border text-white" id="signout"
+                        style="background-color: #023859;">
+                        <i class="fa-solid fa-arrow-right-from-bracket me-2"></i>Sign Out
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Button trigger modal -->
+        <div class="row mt-5 mb-4">
+            <div class="col text-center">
+                <button type="button" class="btn fs-5 px-3 py-1 add-button" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    <i class="fa-solid fa-user-plus"></i>&nbsp; Add Student
+                </button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Add Student</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                onclick="location.reload()"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form onsubmit="" id="myForm">
+                                <div class="row px-5 d-flex justify-content-center">
+                                    <div class="row p-lg-3 d-flex justify-content-center">
+                                        <div class="col-lg-4 mb-4">
+                                            <label for="firstname" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="firstname">
+                                            <p id="firstnamep"></p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <label for="lastname" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="lastname">
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <label for="dob" class="form-label">Date Of Birth</label>
+                                            <input type="date" class="form-control" id="dob">
+                                            <p id="dobp"></p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" class="form-control" id="email">
+                                            <p id="emailp"></p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <label for="address" class="form-label">Address</label>
+                                            <!-- <input type="text" class="form-control" id="address"> -->
+                                            <textarea name="" cols="30" rows="1" class="form-control"
+                                                id="address"></textarea>
+                                            <p id="addressp"></p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4">
+                                            <label for="graduationyear" class="form-label">Graduation Year</label>
+                                            <input type="month" class="form-control" id="graduationyear">
+                                            <p id="graduationyearp"></p>
+                                        </div>
+                                        <div class="col-lg-4 mb-4 ms-0">
+                                            <label for="pswd" class="form-label">Password</label>
+                                            <input type="text" name="" id="pswd" class="form-control">
+                                            <p class="text-danger" id="passwordp"></p>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>
+
+                                <div class="row px-5 text-center">
+                                    <div class="col-lg-12 d-flex justify-content-between px-5 mb-5">
+                                        <span>
+                                            <h2>Education:</h2>
+                                        </span>
+                                        <button class="btn addbtn" type="button"><span class="fs-3"
+                                                style="transform: translateY(-5%);">&plus;</span></button>
+                                    </div>
+                                    <div class="col-lg-12 showData px-lg-5 text-center table-responsive">
+                                        <table class="table mb-4">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Degree/Board</th>
+                                                    <th scope="col">School/College</th>
+                                                    <th scope="col">Start Date</th>
+                                                    <th scope="col">Passout Year</th>
+                                                    <th scope="col">Percentage</th>
+                                                    <th scope="col">Backlog</th>
+                                                    <th scope="col"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="eduTable">
+                                                <tr>
+                                                    <td> <input type="text" class="form-control" id="degree"
+                                                            value="10th">
+                                                        <p id="degreeP"></p>
+                                                    </td>
+                                                    <td> <input type="text" class="form-control" id="school">
+                                                        <p id="schoolP"></p>
+                                                    </td>
+                                                    <td> <input type="month" class="form-control" id="startdate">
+                                                        <p id="startP"></p>
+                                                    </td>
+                                                    <td> <input type="month" class="form-control" id="passout">
+                                                        <p id="passoutP"></p>
+                                                    </td>
+                                                    <td> <input type="number" class="form-control" id="percentage"
+                                                            min="0" max="100" step=".01">
+                                                        <p id="percentageP"></p>
+                                                    </td>
+                                                    <td> <input type="number" class="form-control" id="backlog" min="0"
+                                                            value="0" required>
+                                                        <p id="backlogP"></p>
+                                                    </td>
+                                                    <td><button class="btn btn-dsbld" disabled></button></td>
+                                                </tr>
+                                                <tr>
+                                                    <td> <input type="text" class="form-control" id="degree"
+                                                            value="12th">
+                                                        <p id="degreeP"></p>
+                                                    </td>
+                                                    <td> <input type="text" class="form-control" id="school">
+                                                        <p id="schoolP"></p>
+                                                    </td>
+                                                    <td> <input type="month" class="form-control" id="startdate">
+                                                        <p id="startP"></p>
+                                                    </td>
+                                                    <td> <input type="month" class="form-control" id="passout">
+                                                        <p id="passoutP"></p>
+                                                    </td>
+                                                    <td> <input type="number" class="form-control" id="percentage"
+                                                            min="0" max="100" step=".01">
+                                                        <p id="percentageP"></p>
+                                                    </td>
+                                                    <td> <input type="number" class="form-control" id="backlog" min="0"
+                                                            value="0" required>
+                                                        <p id="backlogP"></p>
+                                                    </td>
+                                                    <td><button class="btn btn-dsbld" disabled></button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col mt-2 mb-4">
+                                        <input type="submit" class="btn border sub-button px-5 fs-5" id="submit"
+                                            value="Submit">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col" style="overflow-x: auto;">
+                <table class="table showTable" id="showTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">First Name</th>
+                            <th scope="col">Last Name</th>
+                            <th scope="col">Date of Birth</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Graduation Year</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Actions</th>
+                            <th scope="col">Edu. Info</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
